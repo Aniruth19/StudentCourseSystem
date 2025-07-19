@@ -2,13 +2,14 @@ package model;
 import java.util.*;
 
 public class Student {
+
     int studentId;
-    String name;
+    String studentName;
     Set<Course> coursesEnrolled;
 
     public Student(int studentId, String name) {
         this.studentId = studentId;
-        this.name = name;
+        this.studentName = name;
         this.coursesEnrolled = new HashSet<>();
     }
 
@@ -21,15 +22,22 @@ public class Student {
     }
 
     public String getName() {
-        return name;
+        return studentName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.studentName = name;
+    }
+
+    public void addCourse(Set<Course>  coursesEnrolled,String courseName) {
+        //
     }
 
     public Set<Course> getCoursesEnrolled() {
-        return coursesEnrolled;
+        return this.coursesEnrolled;
     }
-
+    @Override
+    public String toString(){
+        return studentName;
+    }
 }
