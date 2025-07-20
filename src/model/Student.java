@@ -24,6 +24,7 @@ public class Student {
     public Set<Course> getCoursesEnrolled() {
         return this.coursesEnrolled;
     }
+
     @Override
     public String toString(){
         return studentName;
