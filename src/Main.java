@@ -32,7 +32,7 @@ public class Main {
                     enrollmentSystem.addEnrollment();
                     break;
                 case 4:
-                    enrollmentSystem.listAllCourses();
+                    enrollmentSystem.listAllStudentsInCourse();
                     break;
                 case 5:
                     enrollmentSystem.listAllCoursesStudentEnrolled();

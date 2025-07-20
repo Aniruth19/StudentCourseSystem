@@ -17,20 +17,8 @@ public class Student {
         return studentId;
     }
 
-    public void setStudentId(int studentId) {
-        this.studentId = studentId;
-    }
-
     public String getName() {
         return studentName;
-    }
-
-    public void setName(String name) {
-        this.studentName = name;
-    }
-
-    public void addCourse(Set<Course>  coursesEnrolled,String courseName) {
-        //
     }
 
     public Set<Course> getCoursesEnrolled() {
