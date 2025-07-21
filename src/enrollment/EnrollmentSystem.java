@@ -4,7 +4,7 @@ import model.Student;
 import java.util.*;
 
 public class EnrollmentSystem {
-    private static int studentIdCounter = 0;
+    private static int studentIdGenerator = 0;
     Scanner sc = new Scanner(System.in);
     Map<Course, Set<Student>> enrollmentMap = new HashMap<>();
     Map<Integer, Student> studentMap = new HashMap<>();
@@ -13,10 +13,10 @@ public class EnrollmentSystem {
         System.out.println("Enter the Student name : ");
         String studentName = sc.nextLine();
 
-        Student currentstudent = new Student(studentIdCounter, studentName);
-        studentMap.put(studentIdCounter, currentstudent);
-        System.out.println("Student has been added with ID: " + studentIdCounter);
-        studentIdCounter++;
+        Student currentstudent = new Student(studentIdGenerator, studentName);
+        studentMap.put(studentIdGenerator, currentstudent);
+        System.out.println("Student has been added with ID: " + studentIdGenerator);
+        studentIdGenerator++;
 
         if (enrollmentMap.isEmpty()) {
             System.out.println("No courses are available at the moment");
@@ -54,7 +54,7 @@ public class EnrollmentSystem {
     public void addEnrollment() {
         System.out.println("Enter the Student ID :");
         int studentId = sc.nextInt();
-        sc.nextLine();  // Clear buffer
+        sc.nextLine();  
 
         System.out.println("Enter the Course name :");
         String courseName = sc.nextLine();
@@ -107,7 +107,6 @@ public class EnrollmentSystem {
             if (targetCourse != null &&
                     enrollmentMap.get(targetCourse).contains(student) &&
                     student.getCoursesEnrolled().contains(targetCourse)) {
-
                 enrollmentMap.get(targetCourse).remove(student);
                 student.getCoursesEnrolled().remove(targetCourse);
                 System.out.println("Enrollment removed successfully.");
@@ -188,6 +187,8 @@ public class EnrollmentSystem {
             }
         }
     }
+    // Lists down all the courses that the student has enrolled
+
 
     public void listAllCoursesStudentEnrolled() {
         System.out.println("Enter the Student ID : ");
