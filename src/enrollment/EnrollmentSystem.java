@@ -189,7 +189,6 @@ public class EnrollmentSystem {
     }
     // Lists down all the courses that the student has enrolled
 
-
     public void listAllCoursesStudentEnrolled() {
         System.out.println("Enter the Student ID : ");
         int studentId = sc.nextInt();
